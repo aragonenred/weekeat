@@ -1,0 +1,112 @@
+:root{
+    --ColorPrincipal: #e10543;
+    --ColorAlternativo:#eb557f;
+    --ColorBlack: rgb(27, 7, 7); 
+    --ColorWhite: #fff;
+    --fontPrimary: 'Open Sans', sans-serif;
+
+}
+
+html{
+    box-sizing: border-box; 
+    font-size: 62.5%; 
+   
+  }
+  
+body{
+    /* height: 100%; */
+    overflow-y: scroll;
+    position: relative; 
+    -moz-scrollbars-vertical: scroll;
+    font-size: 1.4rem;
+    font-family: var(--fontPrimary);
+    font-weight:400;
+  }
+
+*, *:before, *:after{box-sizing: inherit;}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li:first-child{
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #fff;
+}
+
+a{
+    text-decoration: none;
+    color: var(--ColorWhite);
+    font-size: 1.4rem;
+}
+.container{
+    max-width: 90%;
+    ;
+}
+.nav-header{
+    background-color: var(--ColorPrincipal);
+    padding: 1.5rem 1rem;
+}
+.nav-header ul{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.btn-done{
+    background-color: var(--ColorAlternativo);
+    color: var(--ColorWhite);
+    padding: 1rem 3rem;
+    display: block;
+    border:none;
+    width: 100%;
+}
+header i{
+    color: var(--ColorPrincipal);
+    font-size: 1.5rem;
+}
+.logo{
+    max-width: 50%;
+}
+
+/**ALACENA**/
+#tb-items-alacena{
+    text-align: center;
+    border-collapse: collapse;
+}
+#tb-items-alacena img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+#tb-items-alacena tbody tr{
+    border-bottom: 1px solid #9b959557;
+    margin: 0;
+}
+#tb-items-alacena tbody tr th{
+    padding: 1rem;
+    margin-right: .5rem;
+}
+#tb-items-alacena tbody tr td{
+    height: 5.5rem;
+}
+/**New Item**/
+.form-item{
+    text-align: center;
+}
+.campo{
+    display: block;
+    margin: 1rem auto;
+}
+.campo label{
+    margin-right: 1rem;
+}
+.form-item img{
+    display: block;
+    text-align: center;
+    margin: 1rem auto;
+    border: 1px solid  #9b959557;
+    border-radius: 50%;
+    height: 10rem;
+}
