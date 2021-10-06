@@ -45,15 +45,7 @@ a{
     max-width: 90%;
     ;
 }
-.nav-header{
-    background-color: var(--ColorPrincipal);
-    padding: 1.5rem 1rem;
-}
-.nav-header ul{
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-}
+
 .btn-done{
     background-color: var(--ColorAlternativo);
     color: var(--ColorWhite);
@@ -62,9 +54,27 @@ a{
     border:none;
     width: 100%;
 }
+/**HEADER**/
+.menu-header{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: .5rem auto;
+   
+}
+.nav-header{
+    background-color: var(--ColorPrincipal);
+    padding: 0.2rem 1rem;
+}
+.nav-header ul{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
 header i{
     color: var(--ColorPrincipal);
-    font-size: 1.5rem;
+    font-size: 4rem;
+    padding-bottom: .5rem;
 }
 .logo{
     max-width: 50%;
@@ -94,6 +104,7 @@ header i{
 /**New Item**/
 .form-item{
     text-align: center;
+    margin: 0 auto;
 }
 .campo{
     display: block;

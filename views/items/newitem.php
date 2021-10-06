@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <title>Document</title>
-</head>
-<body>
-
+<?php include_once('views/templates/header.php'); ?>
 <main>
-    <form action="" class="form-item container">
+    <form action="" class="form-item container" method="POST" id="I_form">
         <div class="campo">
-            <img src="../img/Itemgenerico.png" alt="foto.jpg"> 
+            <img src="img/Itemgenerico.png" alt="foto.jpg"> 
         </div>        
         <div class="campo">
             <input type="text" placeholder="Nombre del Ingrediente" id="I_name">
