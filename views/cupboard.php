@@ -11,14 +11,21 @@
     <div class="alacena">
         <table id="tb-items-alacena">
             <tr><th>Imagen</th><th>Item</th><th>Cantidad</th><th>Unidad Medida</th></tr>
-            <tr><td><img src="img/arroz.jpg" alt="img.jpg"></td><td>Arroz</td><td>1</td><td>UN</td></tr>
-            <tr><td><img src="img/tallarin.jpg" alt="img.jpg"></td><td>Fideo Tallarin</td><td>2</td><td>UN</td></tr>
-            <tr><td><img src="img/puretomate.jpg" alt="img.jpg"></td><td>Pure de Tomate</td><td>1</td><td>UN</td></tr>
-            <tr><td><img src="img/manteca.png" alt="img.jpg"></td><td>Manteca</td><td>1</td><td>UN</td></tr>
-            <tr><td><img src="img/itemgenerico.png" alt="img.jpg"></td><td>Matecocido</td><td>1</td><td>UN</td></tr>
+            <?php foreach($data['items'] as $item){ ?>
+            <tr>
+                <td><img src="img/<?php echo $item['image']; ?>" alt="img.jpg"></td>
+                <td><?php echo $item['description']; ?></td>
+                <td><?php echo $item['quantity']; ?></td>
+                <td><?php echo $item['um']; ?></td>
+            </tr> 
+            <?php } ?>
+           
+
         </table>   
     </div>
-</main>
+ 
+       
+</main> 
     
 </body>
 </html>

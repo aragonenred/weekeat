@@ -5,7 +5,7 @@ class CupboardController{
         $cupboard = new Cupboard_Model();
         $data["titulo"] = "Alacena";
         $data["items"] = $cupboard->get_items_cupboard();
-
+        
         require_once "views/cupboard.php";
     }
 

@@ -14,7 +14,6 @@
             loadAction($controller, DEFAULT_ACTION);
         }
         
-
     }else{
         $default = DEFAULT_CONTROLLER;
         $controller = loadController(DEFAULT_CONTROLLER);
