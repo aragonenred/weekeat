@@ -43,17 +43,26 @@ a{
 }
 .container{
     max-width: 90%;
-    ;
+    margin:0 auto;
 }
-
-.btn-done{
-    background-color: var(--ColorAlternativo);
+.btn{
+    background-color: var(--ColorPrincipal);
     color: var(--ColorWhite);
     padding: 1rem 3rem;
     display: block;
     border:none;
     width: 100%;
+    text-align: center;
+    margin: 1rem 0;  
 }
+.btn-done{
+    background-color: var(--ColorAlternativo);
+    color: var(--ColorWhite);
+}
+
+
+
+
 /**HEADER**/
 .menu-header{
     display: flex;
@@ -81,25 +90,39 @@ header i{
 }
 
 /**ALACENA**/
-#tb-items-alacena{
+.alacena{
+    position: relative;
+    
+}
+.tb-items-alacena{
     text-align: center;
     border-collapse: collapse;
 }
-#tb-items-alacena img{
+.img-items{
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
 }
-#tb-items-alacena tbody tr{
+.tb-items-alacena tbody tr{
     border-bottom: 1px solid #9b959557;
     margin: 0;
 }
-#tb-items-alacena tbody tr th{
+.tb-items-alacena tbody tr th{
     padding: 1rem;
     margin-right: .5rem;
 }
-#tb-items-alacena tbody tr td{
+.tb-items-alacena tbody tr td{
     height: 5.5rem;
+}
+.tb-items-alacena input,
+.float-content table input{
+    width: 5rem;
+}
+.alacena-form{
+    margin: 0 auto;
+}
+.alacena-form input[type=text]{
+    width: 2.5rem;
 }
 /**New Item**/
 .form-item{
@@ -121,3 +144,30 @@ header i{
     border-radius: 50%;
     height: 10rem;
 }
+/**Add item float**/
+.alacena-add-float{
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    position: absolute;
+    background-color: white;
+}
+/**
+    top:2rem;
+    left:0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    position: absolute;
+}
+
+/**
+.float-form{
+    background-color: red;
+    max-height: 30rem;
+    overflow-y: auto;
+}
+*/
+

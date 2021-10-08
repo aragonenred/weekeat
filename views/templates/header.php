@@ -19,3 +19,10 @@
         <a href=""><i class="fas fa-bars"></i></a>   
     </div>
 </header>
+<nav class="nav-header">
+        <ul class= "container">
+            <li><a href="index.php?c=cupboard&aindex">Mi Alacena</a></li>
+            <li><a href="index.php?c=cupboard&a=edit">Administrar Alacena</a></li>
+            <li><a href="#">Lista de Compras</a></li>
+        </ul>
+</nav>

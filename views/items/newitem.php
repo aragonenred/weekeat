@@ -15,7 +15,7 @@
             </select>
         </div>
         <div class="campo">
-            <input class="btn-done" type="submit" value="Guardar">
+            <input class="btn btn-done" type="submit" value="Guardar">
         </div>
     </form>
 
