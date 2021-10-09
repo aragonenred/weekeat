@@ -18,9 +18,9 @@ class Items_model{
     }
 
     public function insert_item($description, $um, $upc, $image){
-        $sql = "INSERT INTO vehiculos (description, um, upc, image) VALUES ('$description', '$um', '$upc','$image')";
+        $sql = "INSERT INTO items (description, um, upc, image) VALUES ('$description', '$um', '$upc','$image')";
+        echo $sql;
         $resultado = $this->db->query($sql);
-
     }
 
 

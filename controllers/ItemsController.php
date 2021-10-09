@@ -14,5 +14,17 @@ class ItemsController{
         require_once "views/items/newitem.php";
 
     }
+
+    public function insert(){
+        require_once "models/ItemsModel.php";
+        $item = new Items_model();
+        $description= $_POST['I_name']; 
+        $um = $_POST['I_um']; 
+        $upc = "0"; 
+        $image ="";
+        echo $description, $um;
+        $item->insert_item($description, $um, $upc, $image);
+
+    }
 }
 ?>
