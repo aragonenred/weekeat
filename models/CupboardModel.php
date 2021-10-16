@@ -10,10 +10,15 @@ class Cupboard_Model{
 
     public function get_items_cupboard(){
         $sql = "SELECT c.id_item, i.description, c.quantity, i.um, i.image FROM cupboard c INNER JOIN items i ON c.id_item = i.id ";
-        $resultado = $this->db->query($sql);
-        while($row = $resultado->fetch_assoc()){
-            $this->items[] = $row;
+        try {
+            $resultado = $this->db->query($sql);
+            while($row = $resultado->fetch_assoc()){
+                $this->items[] = $row;
+            }
+        } catch (\Throwable $th) {
+            echo "Ocurrio un error al consultar la Base de Datos " . $th ;
         }
+        
         return $this->items;
     }
  
