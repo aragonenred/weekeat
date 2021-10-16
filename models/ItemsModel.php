@@ -10,10 +10,15 @@ class Items_model{
 
     public function get_items(){
         $sql = 'SELECT * FROM items';
-        $resultado = $this->db->query($sql);
-        while($row = $resultado->fetch_assoc()){
-            $this->items[] = $row;
+        try {
+            $resultado = $this->db->query($sql);
+            while($row = $resultado->fetch_assoc()){
+                $this->items[] = $row;
+            }
+        } catch (\Throwable $th) {
+            echo "Ocurrio un error al consultar la Base de Datos " . $th ;
         }
+        
         return $this->items;
     }
 
