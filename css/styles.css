@@ -59,7 +59,13 @@ a{
     background-color: var(--ColorAlternativo);
     color: var(--ColorWhite);
 }
-
+.input_hidden{
+    font-size: 0;
+    border:none;
+    height: 0;
+    width: 0;
+    padding: 0;
+}
 
 
 
@@ -154,6 +160,7 @@ header i{
     position: absolute;
     background-color: white;
 }
+
 /**
     top:2rem;
     left:0;

@@ -4,6 +4,9 @@
     require_once "config/database.php";
     require_once "controllers/ItemsController.php";
 
+    if(!is_file('controllers/CupboardController.php')){
+        echo "lo encontre ";
+    }
 
     if(isset($_GET['c'])){
         $controller = loadController($_GET['c']); //Lo va a buscar a routes.php
