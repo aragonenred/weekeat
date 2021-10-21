@@ -23,10 +23,8 @@ class Cupboard_Model{
     }
  
     public function update_cupboard($id_item, $quantity){
-
         $sql= ("UPDATE cupboard SET quantity=".$quantity." WHERE id_item=".$id_item);
         $this->db->query($sql);
-        
     }
 
 

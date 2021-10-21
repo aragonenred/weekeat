@@ -11,6 +11,7 @@
                     <td><?php echo $item['description']; ?></td>
                     <td><input type="text" value="<?php echo $item['quantity']; ?>" name="quantity[]" width="5"> </td>
                     <td><?php echo $item['um']; ?></td>
+                    <td><input type="checkbox" name="ItemNew[]" ></td>
                 </tr> 
                 <?php } ?>
             </table>  
@@ -27,9 +28,9 @@
                     <tr>
                         <td><input type="text" value="<?php echo $items['id'];?>" name="id[]" class="id_item input_hidden" ><img src="img/<?php echo $items['image']; ?>" alt="" class="img-items"></td>
                         <td><?php echo $items['description'];  ?></td>
-                        <td><input type="text"></td>
+                        <td><input type="text" value="" name="quantity[]" ></td>
                         <td><?php echo $items['um'];  ?></td>
-                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox" name="ItemNew[]"></td>
                     </tr>
                 <?php } ?> 
             </table>  

@@ -23,11 +23,14 @@ document.addEventListener('DOMContentLoaded', function(){
             var idItem = tb_items_float.children[i].children[0].children[0].value;
 
             console.log(cantidad);
+            
             if(checked && cantidad >0){     
                 if(!comprobarItem(idItem)){
-                   var tr = document.createElement("tr");
+                   var tr = document.createElement("tr");                 
                    tr.innerHTML = tb_items_float.children[i].innerHTML;
-                   tr.children[4].remove(); //borro el checkbox
+                   tr.children[2].children[0].setAttribute('value', cantidad); //Le cargo la cantidad
+                   tr.children[4].setAttribute('hidden',''); //borro el checkbox
+                   tr.children[4].children[0].checked = true;
                    tb_items.appendChild(tr);
                 }
                 tb_items_float.children[i].children[4].children[0].checked = false; //Reseteo el checkbox 
