@@ -5,15 +5,15 @@
         <form action="index.php?c=cupboard&a=update" method="POST" class="alacena-form">
             <table id="tb-items-alacena" class="tb-items-alacena">
                 <tr><th>Imagen</th><th>Item</th><th>Cantidad</th><th>Unidad Medida</th></tr>
-                <?php foreach($data['cupboard'] as $item){ ?>
+                <?php foreach($data['cupboard'] as $key=>$item){ ?>
                 <tr>
                     <td><input type="text" value="<?php echo $item['id_item'];?>" name="id[]" class="id_item input_hidden" ><img src="img/<?php echo $item['image']; ?>" alt="img.jpg" class="img-items"></td>
                     <td><?php echo $item['description']; ?></td>
-                    <td><input type="text" value="<?php echo $item['quantity']; ?>" name="quantity[]" width="5"> </td>
+                    <td><input type="text" value="<?php echo $item['quantity']; ?>" name="quantity[]"  width="5"> </td>
                     <td><?php echo $item['um']; ?></td>
-                    <td><input type="checkbox" name="ItemNew[]" ></td>
+                    <td><input type="text" name="ItemNew[]" value="0"></td>
                 </tr> 
-                <?php } ?>
+                <?php  } ?>
             </table>  
             <a href="#" class="btn" id="btn-addItem">Agregar Item</a> 
             <input type="submit" value="Guardar" class="btn btn-done">
@@ -30,7 +30,7 @@
                         <td><?php echo $items['description'];  ?></td>
                         <td><input type="text" value="" name="quantity[]" ></td>
                         <td><?php echo $items['um'];  ?></td>
-                        <td><input type="checkbox" name="ItemNew[]"></td>
+                        <td><input type="checkbox" name=""></td>
                     </tr>
                 <?php } ?> 
             </table>  

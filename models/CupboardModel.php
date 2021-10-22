@@ -27,6 +27,13 @@ class Cupboard_Model{
         $this->db->query($sql);
     }
 
+    public function add_item_cupboard($id_item, $quantity){
+        $sql= "INSERT INTO cupboard(id_item, quantity) VALUES (".$id_item.", ".$quantity.")";
+        echo $sql;
+        $this->db->query($sql);
+
+    }
+
 
 
 }

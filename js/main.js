@@ -29,8 +29,17 @@ document.addEventListener('DOMContentLoaded', function(){
                    var tr = document.createElement("tr");                 
                    tr.innerHTML = tb_items_float.children[i].innerHTML;
                    tr.children[2].children[0].setAttribute('value', cantidad); //Le cargo la cantidad
-                   tr.children[4].setAttribute('hidden',''); //borro el checkbox
-                   tr.children[4].children[0].checked = true;
+                   tr.children[4].remove(); //borro el checkbox
+                   
+                   //Creo un input que voy a usar para indicar cuando un item es nuevo:
+                   var add = document.createElement("input");
+                   var td = document.createElement("td");
+                   add.type = "text";
+                   add.setAttribute("name","ItemNew[]");
+                   add.setAttribute("value","1");
+                   td.appendChild(add);
+                   tr.appendChild(td); 
+
                    tb_items.appendChild(tr);
                 }
                 tb_items_float.children[i].children[4].children[0].checked = false; //Reseteo el checkbox 

@@ -25,16 +25,19 @@ class CupboardController{
         require_once "models/CupboardModel.php";
         $cupboard = new Cupboard_Model();
 
-        
+        for($i=0; $i <count($_POST['id']); $i++){  
 
-        for($i=0; $i <count($_POST['id']); $i++){
-
-            echo $_POST['ItemNew'][$i];
-            //if($_POST['ItemNew'][$i])
-            $cupboard->update_cupboard($_POST['id'][$i], $_POST['quantity'][$i]); 
+           if($_POST['ItemNew'][$i]===0){
+                $cupboard->update_cupboard($_POST['id'][$i], $_POST['quantity'][$i]); 
+            }else if($_POST['ItemNew'][$i]===1){
+                echo "nuevo";
+                $cupboard->add_item_cupboard($_POST['id'][$i], $_POST['quantity'][$i]);    
+            }
+            
+            
         }
         
-        $this->index();
+        //$this->index();
     }
 
 }
