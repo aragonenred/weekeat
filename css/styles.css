@@ -22,7 +22,9 @@ body{
     font-family: var(--fontPrimary);
     font-weight:400;
   }
-
+main{
+    margin-top: 12rem!important;
+}
 *, *:before, *:after{box-sizing: inherit;}
 
 ul{
@@ -67,24 +69,37 @@ a{
     padding: 0;
 }
 
-
+.relative{
+    position: relative;
+}
 
 /**HEADER**/
+header{
+    position: fixed;
+    top:0;
+    background-color: var(--ColorWhite);
+}
 .menu-header{
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     margin: .5rem auto;
+    position: relative;
    
 }
 .nav-header{
     background-color: var(--ColorPrincipal);
     padding: 0.2rem 1rem;
+    min-height: 4rem;
 }
 .nav-header ul{
     display: flex;
     justify-content: space-between;
     text-align: center;
+    align-items: center;
+}
+.nav-header ul li{
+    max-width: 14rem;
 }
 header i{
     color: var(--ColorPrincipal);
@@ -96,10 +111,8 @@ header i{
 }
 
 /**ALACENA**/
-.alacena{
-    position: relative;
-    
-}
+
+
 .tb-items-alacena{
     text-align: center;
     border-collapse: collapse;
@@ -151,7 +164,7 @@ header i{
     height: 10rem;
 }
 /**Add item float**/
-.alacena-add-float{
+.add-float{
     top:0;
     left:0;
     right: 0;
@@ -161,20 +174,14 @@ header i{
     background-color: white;
 }
 
-/**
-    top:2rem;
-    left:0;
-    right: 0;
-    bottom: 0;
-    margin: 0 auto;
-    position: absolute;
-}
-
-/**
-.float-form{
+/**Sidebar**/
+.sidebar{
+    height: 10rem;
+    width: 10rem;
     background-color: red;
-    max-height: 30rem;
-    overflow-y: auto;
+    position: absolute;
+    bottom: -10rem;
+    right: 0;
+    display: none;
 }
-*/
 

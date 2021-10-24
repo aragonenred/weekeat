@@ -5,7 +5,8 @@
         $fileController = "controllers/".$controller."Controller".".php";
 
         if(!is_file($fileController)){
-            echo "no existe: ";
+            echo "no existe:  " .$fileController;
+            echo "</br>";
             $nameController = DEFAULT_CONTROLLER."Controller";
             $fileController = "controllers/".DEFAULT_CONTROLLER."Controller".".php";
             echo $fileController;

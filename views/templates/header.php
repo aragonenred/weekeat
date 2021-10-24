@@ -17,13 +17,11 @@
 <header class="">
     <div class="menu-header container">
         <img src="img/logo.png" class="logo" alt="">  
-        <a href=""><i class="fas fa-bars"></i></a>   
+        <a href="#" id="sidebar-btn"><i class="fas fa-bars"></i></a>
+        <div class="sidebar relative" id="sidebar">
+            <a href="index.php?c=Items&a=index">Ingredientes</a>
+            <a href="index.php?c=Cupboard&a=index">Alacena</a>
+        </div>       
     </div>
-</header>
-<nav class="nav-header">
-        <ul class= "container">
-            <li><a href="index.php?c=cupboard&a=index">Mi Alacena</a></li>
-            <li><a href="index.php?c=cupboard&a=edit">Administrar Alacena</a></li>
-            <li><a href="#">Lista de Compras</a></li>
-        </ul>
-</nav>
+
+

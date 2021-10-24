@@ -24,8 +24,13 @@ class Items_model{
 
     public function insert_item($description, $um, $upc, $image){
         $sql = "INSERT INTO items (description, um, upc, image) VALUES ('$description', '$um', '$upc','$image')";
-        echo $sql;
+    
         $resultado = $this->db->query($sql);
+    }
+
+    public function update_item($id, $description, $um){
+        $sql= "UPDATE items SET description='$description', um='$um' WHERE id=$id";
+        $resultado= $this->db->query($sql);
     }
 
 

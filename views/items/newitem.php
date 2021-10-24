@@ -1,6 +1,5 @@
-<?php include_once('views/templates/header.php'); ?>
-<main>
-    <form action="index.php?c=items&a=insert" class="form-item container" method="POST" id="I_form">
+
+    <form action="index.php?c=items&a=insert_item" class="form-item container" method="POST" id="I_form">
         <div class="campo">
             <img src="img/Itemgenerico.png" alt="foto.jpg"> 
         </div>        
@@ -18,9 +17,3 @@
             <input class="btn btn-done" type="submit" value="Guardar">
         </div>
     </form>
-
-</main>
-
-
-</body>
-</html>

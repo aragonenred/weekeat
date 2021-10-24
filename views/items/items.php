@@ -1,4 +1,5 @@
 <?php include_once('views/templates/header.php'); ?>
+<?php include_once('views/templates/nav-items.php'); ?>
 
 <main class="container">
     <form class="alacena-form">
@@ -18,6 +19,6 @@
     </form>
 </main>
 
-    
+<?php include_once "views/templates/footer.php"; ?>
 </body>
 </html>

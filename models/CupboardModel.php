@@ -9,7 +9,7 @@ class Cupboard_Model{
     }
 
     public function get_items_cupboard(){
-        $sql = "SELECT c.id_item, i.description, c.quantity, i.um, i.image FROM cupboard c INNER JOIN items i ON c.id_item = i.id ";
+        $sql = "SELECT c.id_item, i.description, c.quantity, i.um, i.image FROM cupboard c INNER JOIN items i ON c.id_item = i.id ORDER BY i.description";
         try {
             $resultado = $this->db->query($sql);
             while($row = $resultado->fetch_assoc()){
@@ -29,11 +29,14 @@ class Cupboard_Model{
 
     public function add_item_cupboard($id_item, $quantity){
         $sql= "INSERT INTO cupboard(id_item, quantity) VALUES (".$id_item.", ".$quantity.")";
-        echo $sql;
         $this->db->query($sql);
 
     }
 
+    public function delete_item_cupboard($id_item){
+        $sql = "DELETE FROM cupboard where id_item =".$id_item;
+        $this->db->query($sql);
+    }
 
 
 }

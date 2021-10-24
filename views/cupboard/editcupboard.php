@@ -1,7 +1,8 @@
 <?php include_once('views/templates/header.php'); ?>
+<?php include_once('views/templates/nav-cupboard.php'); ?>
 
-<main class="container alacena">
-    <div id="alacena-content">
+<main class="container relative">
+    <div id="content">
         <form action="index.php?c=cupboard&a=update" method="POST" class="alacena-form">
             <table id="tb-items-alacena" class="tb-items-alacena">
                 <tr><th>Imagen</th><th>Item</th><th>Cantidad</th><th>Unidad Medida</th></tr>
@@ -9,9 +10,9 @@
                 <tr>
                     <td><input type="text" value="<?php echo $item['id_item'];?>" name="id[]" class="id_item input_hidden" ><img src="img/<?php echo $item['image']; ?>" alt="img.jpg" class="img-items"></td>
                     <td><?php echo $item['description']; ?></td>
-                    <td><input type="text" value="<?php echo $item['quantity']; ?>" name="quantity[]"  width="5"> </td>
+                    <td><input type="number" value="<?php echo $item['quantity']; ?>" name="quantity[]"  width="5"> </td>
                     <td><?php echo $item['um']; ?></td>
-                    <td><input type="text" name="ItemNew[]" value="0"></td>
+                    <td><input type="text" name="ItemNew[]" value="0" hidden></td> 
                 </tr> 
                 <?php  } ?>
             </table>  
@@ -20,7 +21,7 @@
         </form>   
     </div>
 
-    <div class="alacena-add-float" id="alacena-add-float" style="display:none">
+    <div class="add-float" id="add-float" style="display:none">
         <form class="alacena-form">
             <table id="tb-items-float" class="tb-items-alacena">
                 <tr><th>Imagen</th><th>Item</th><th>Cantidad</th><th>Unidad Medida</th></tr>

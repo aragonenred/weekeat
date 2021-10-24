@@ -1,4 +1,5 @@
 <?php include_once('views/templates/header.php'); ?>
+<?php include_once('views/templates/nav-cupboard.php'); ?>
 
 
 <main class="container">
@@ -20,6 +21,6 @@
  
        
 </main> 
-    
+<?php include_once "views/templates/footer.php"; ?>
 </body>
 </html>
