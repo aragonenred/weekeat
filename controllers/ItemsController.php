@@ -1,7 +1,6 @@
 <?php
 class ItemsController{
     public function index(){
-        echo"llegue";
         require_once "models/ItemsModel.php";
         $item = new Items_model();
         $data["titulo"] = "Descripcion";
@@ -46,13 +45,24 @@ class ItemsController{
     public function update_items(){
         require_once("models/ItemsModel.php");
         $item = new Items_model();
+
+        
         
         for($i=0; $i<count($_POST['id']); $i++) { 
             $id = $_POST['id'][$i];
             $description= $_POST['description'][$i]; 
-            $um = $_POST['um'][$i];    
+            $um = $_POST['um'][$i];
+            $delete = false;
+            if(isset($_POST['del_'.$id])){
+                $delete = true;
+            }    
             
-            $item->update_item($id, $description,$um);        
+            if($delete==false){
+                $item->update_item($id, $description,$um); 
+            }else{
+                $item->delete_item($id);
+            }
+                   
         }
         
         $this->index();

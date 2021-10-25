@@ -22,6 +22,11 @@ body{
     font-family: var(--fontPrimary);
     font-weight:400;
   }
+  table{
+    font-size: 1.4rem;
+    font-family: var(--fontPrimary);
+    font-weight:400;
+  }
 main{
     margin-top: 12rem!important;
 }
@@ -78,6 +83,7 @@ header{
     position: fixed;
     top:0;
     background-color: var(--ColorWhite);
+    z-index: 1000;
 }
 .menu-header{
     display: flex;
@@ -183,5 +189,32 @@ header i{
     bottom: -10rem;
     right: 0;
     display: none;
+}
+
+/**Recipes**/
+.recipe{
+    display: flex;
+    border-bottom: solid 1px var(--ColorAlternativo);
+    height: 20rem;
+    padding: 1rem 0;
+    overflow: auto;
+}
+.recipe img{
+    max-width: 10rem;
+    margin: auto;
+}
+.recipe-content{
+    flex-basis: calc(70% - 1rem);
+    overflow:auto;
+}
+.recipe p{
+    margin: 1rem 0 1rem 1rem;
+}
+.recipe-title{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.recipe a{
+    color: black;
 }
 

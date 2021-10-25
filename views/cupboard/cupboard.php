@@ -5,7 +5,7 @@
 <main class="container">
     <div class="alacena">
         <table class="tb-items-alacena" id="tb-items-alacena ">
-            <tr><th>Imagen</th><th>Item</th><th>Cantidad</th><th>Unidad Medida</th></tr>
+            <tr><th></th><th></th><th>Cantidad</th><th><i class="fas fa-ruler-combined"></i></th></tr>
             <?php foreach($data['items'] as $item){ ?>
             <tr>
                 <td><img src="img/<?php echo $item['image']; ?>" alt="img.jpg" class="img-items"></td>

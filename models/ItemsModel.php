@@ -33,6 +33,11 @@ class Items_model{
         $resultado= $this->db->query($sql);
     }
 
+    public function delete_item($id){
+        $sql = "DELETE FROM items WHERE id=$id";
+        $resultado = $this->db->query($sql);
+    
+    }
 
 
 }

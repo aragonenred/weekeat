@@ -6,7 +6,7 @@
         <form class="items-form" action="index.php?c=items&a=update_items" method="POST">
             <table id="tb-items" class="tb-items">
                 
-                <tr><th>Imagen</th><th>Item</th><th>Unidad Medida</th></tr>
+                <tr><th></th><th></th><th><i class="fas fa-ruler-combined"></i></th><th><i class="far fa-trash-alt"></i></th></tr>
                 <?php foreach($data['items'] as $items){ ?>    
                     <tr>
                         <td><input type="text" value="<?php echo $items['id'];?>" name="id[]" class="id_item input_hidden" ><img src="img/<?php echo $items['image']; ?>" alt="" class="img-items"></td>
@@ -17,6 +17,7 @@
                                 <option value="GR">GR</option> 
                             </select>
                         </td>
+                        <td><input type="checkbox" name="del_<?php echo $items['id']; ?>" value="delete"></td>
                     </tr>
                 <?php } ?> 
             </table>  

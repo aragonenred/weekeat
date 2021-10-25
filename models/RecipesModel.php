@@ -9,7 +9,14 @@ class Recipes_model{
     }
 
     public function get_recipes(){
-     
+        $sql="SELECT * FROM recipes";
+        $resultado = $this->db->query($sql);
+
+        while($row = $resultado->fetch_assoc()){
+            $this->recipes[] = $row;
+        }
+
+        return $this->recipes;
     }
 
     public function insert_recipe(){

@@ -5,7 +5,7 @@
     <div id="content">
         <form action="index.php?c=cupboard&a=update" method="POST" class="alacena-form">
             <table id="tb-items-alacena" class="tb-items-alacena">
-                <tr><th>Imagen</th><th>Item</th><th>Cantidad</th><th>Unidad Medida</th></tr>
+                <tr><th></th><th></th><th>Cantidad</th><th><i class="fas fa-ruler-combined"></i></th></tr>
                 <?php foreach($data['cupboard'] as $key=>$item){ ?>
                 <tr>
                     <td><input type="text" value="<?php echo $item['id_item'];?>" name="id[]" class="id_item input_hidden" ><img src="img/<?php echo $item['image']; ?>" alt="img.jpg" class="img-items"></td>
@@ -24,7 +24,7 @@
     <div class="add-float" id="add-float" style="display:none">
         <form class="alacena-form">
             <table id="tb-items-float" class="tb-items-alacena">
-                <tr><th>Imagen</th><th>Item</th><th>Cantidad</th><th>Unidad Medida</th></tr>
+                <tr><th></th><th></th><th>Cantidad</th><th><i class="fas fa-ruler-combined"></i></th><th><i class="far fa-plus-square"></i></th></tr>
                 <?php foreach($data['items'] as $items){ ?>    
                     <tr>
                         <td><input type="text" value="<?php echo $items['id'];?>" name="id[]" class="id_item input_hidden" ><img src="img/<?php echo $items['image']; ?>" alt="" class="img-items"></td>
