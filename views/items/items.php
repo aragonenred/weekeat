@@ -7,7 +7,6 @@
     <form class="alacena-form">
        
         <table id="tb-items-alacena" class="tb-items-alacena">
-            
             <tr><th></th><th></th><th>Cantidad</th><th><i class="fas fa-ruler-combined"></i></th><th><i class="far fa-plus-square"></i></th></tr>
             <?php foreach($data['items'] as $items){ ?>    
                  <tr>

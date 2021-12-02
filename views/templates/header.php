@@ -21,6 +21,7 @@
         <div class="sidebar relative" id="sidebar">
             <a href="index.php?c=Items&a=index">Ingredientes</a>
             <a href="index.php?c=Cupboard&a=index">Alacena</a>
+            <a href="index.php?c=Recipes&a=index">Recetas</a>
         </div>       
     </div>
 
