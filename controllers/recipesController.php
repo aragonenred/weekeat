@@ -56,6 +56,12 @@ class RecipesController{
  
 
     public function newRecipe(){
+        require_once "models/ItemsModel.php";
+        $items = new Items_Model();
+        
+        $data['items']= $items->get_items();
+
+
         include_once('views/recipes/newrecipe.php');
     }
 
@@ -84,8 +90,8 @@ class RecipesController{
                 'image' => 'recipegenerico.png',
                 'items' => $items
         );
-      
-        $recipe->add_recipe($recipe_data);
+        
+       $recipe->add_recipe($recipe_data);
 
     }
 

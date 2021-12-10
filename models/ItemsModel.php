@@ -9,7 +9,7 @@ class Items_model{
     }
 
     public function get_items(){
-        $sql = 'SELECT * FROM items';
+        $sql = 'SELECT id, description, um, image FROM items ORDER BY description';
         try {
             $resultado = $this->db->query($sql);
             while($row = $resultado->fetch_assoc()){

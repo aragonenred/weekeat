@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function(){
     const tb_items_float = document.querySelector("#tb-items-float tbody");
     const btn_sidebar = document.querySelector("#sidebar-btn");
     const sidebar = document.querySelector("#sidebar");
+    const btn_add_item_recipe = document.querySelector("#recipe-btn-add-item");
+    const btn_add_step = document.querySelector("#btn-add-step");
 
  
     if(btn_addItem){
@@ -67,6 +69,52 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     }
 
+    if(btn_add_item_recipe){
+        btn_add_item_recipe.addEventListener('click', function(e){
+            e.preventDefault();
+
+            var list_items = document.querySelector("#list_items");
+            var cantidad = document.querySelector("#quantity");
+
+            var item ={
+                        'id': list_items.value,
+                        'image': list_items.options[list_items.selectedIndex].getAttribute("image"),
+                        'description': list_items.options[list_items.selectedIndex].text,
+                        'quantity': cantidad.value,
+                        'um': list_items.options[list_items.selectedIndex].getAttribute("um")
+                    };
+            
+            if(item.quantity >0){
+                var tabla_items = document.querySelector("#tb-items-alacena tbody");
+                var tr = document.createElement("tr");
+                tr.innerHTML =  '<td><input type="text" value="'+ item.id +'" name="item_id[]" class="id_item input_hidden" ><img src="img/'+ item.image +'" alt="" class="img-items"></td>';
+                tr.innerHTML += '<td><input class="input-item-blocked w-100" type="text" readonly name="item_description[]" id="" value ="'+ item.description +'"></td>'
+                tr.innerHTML += '<td><input class="input-item-blocked" type="text" readonly name="item_quantity[]" id="" value="'+ item.quantity +'"> '+ item.um +'</td>';
+                tabla_items.appendChild(tr);
+                cantidad.value = "";
+            }else{
+                window.alert("Ingresa una cantidad válida");
+            }
+
+        });
+    }
+
+    if(btn_add_step){
+        btn_add_step.addEventListener('click', function(e){
+            e.preventDefault();
+            var content_recipe = document.querySelector("#recipe_detail_steps");
+            var content_div = document.createElement("div");
+            content_label = document.createElement("label");
+            content_textarea = document.createElement("textarea");
+
+            content_div.innerHTML = '<Label for="step-1" >Paso '+content +':</Label>';
+            content_div.innerHTML +='<textarea style="min-width: 100%" name="step[]" cols="30" rows="3" placeholder="1. Pasos para preparación"></textarea>';
+
+            content_recipe.appendChild(content_div);
+
+
+        });
+    }
 
     function comprobarItem(id){
         var resultado = false;

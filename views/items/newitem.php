@@ -1,5 +1,5 @@
 
-    <form action="index.php?c=items&a=insert_item" class="form-item container" method="POST" id="I_form">
+    <form action="index.php?c=Items&a=insert_item" class="form-item container" method="POST" id="I_form">
         <div class="campo">
             <img src="img/Itemgenerico.png" alt="foto.jpg"> 
         </div>        

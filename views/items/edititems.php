@@ -3,7 +3,7 @@
 
 <main class="container relative">
     <div id="content">
-        <form class="items-form" action="index.php?c=items&a=update_items" method="POST">
+        <form class="items-form" action="index.php?c=Items&a=update_items" method="POST">
             <table id="tb-items" class="tb-items">
                 
                 <tr><th></th><th></th><th><i class="fas fa-ruler-combined"></i></th><th><i class="far fa-trash-alt"></i></th></tr>

@@ -3,7 +3,7 @@
 
 <main class="container relative">
     <div id="content">
-        <form action="index.php?c=cupboard&a=update" method="POST" class="alacena-form">
+        <form action="index.php?c=Cupboard&a=update" method="POST" class="alacena-form">
             <table id="tb-items-alacena" class="tb-items-alacena">
                 <tr><th></th><th></th><th>Cantidad</th><th><i class="fas fa-ruler-combined"></i></th></tr>
                 <?php foreach($data['cupboard'] as $key=>$item){ ?>
