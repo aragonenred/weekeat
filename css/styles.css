@@ -3,6 +3,7 @@
     --ColorAlternativo:#eb557f;
     --ColorBlack: rgb(27, 7, 7); 
     --ColorWhite: #fff;
+    --ColorYellow: rgb(245, 242, 76);    
     --fontPrimary: 'Open Sans', sans-serif;
 
 }
@@ -280,4 +281,54 @@ header i{
     padding: 0!important;
     
     text-align: center;
+}
+/**CALENDAR**/
+.calendar_day_head{
+    border-bottom:  1px solid #9b959557;
+    text-align: center;
+    background-color: var(--ColorAlternativo);
+}
+.calendar_day_head h4{
+    margin: 0;
+}
+.calendar_day_body .fa-sun{
+    color:var(--ColorYellow);
+    font-size: 2.5rem;
+}
+.calendar_day_body .fa-moon{
+    color: black;
+    font-size: 2.5rem;
+}
+.calendar_day_body .fa-pencil-alt{
+    
+    font-size: 2rem;
+}
+
+.calendar_day{
+    border:  1px solid #9b959557;
+    margin-bottom: 1rem;
+    -webkit-box-shadow: 6px 6px 5px 0px rgba(217,210,217,1);
+    -moz-box-shadow: 6px 6px 5px 0px rgba(217,210,217,1);
+    box-shadow: 6px 6px 5px 0px rgba(217,210,217,1);
+}
+.calendar_day_body div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar_day_body table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.calendar_day_body table tbody tr{
+    border-bottom: 1px solid #9b959557;
+    margin: 0;
+}
+.calendar_day_body table  tbody tr th{
+    padding: 1rem;
+    margin-right: .5rem;
+}
+.calendar_day_body table tbody tr td{
+    height: 5.5rem;
 }

@@ -93,6 +93,7 @@ class RecipesController{
         
        $recipe->add_recipe($recipe_data);
 
+       require_once "views/recipes/recipes-list.php";
     }
 
 }

@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function(){
             content_label = document.createElement("label");
             content_textarea = document.createElement("textarea");
 
-            content_div.innerHTML = '<Label for="step-1" >Paso '+content +':</Label>';
+            content_div.innerHTML = '<Label for="step-1" >Paso '+(content_recipe.childElementCount + 1)+':</Label>';
             content_div.innerHTML +='<textarea style="min-width: 100%" name="step[]" cols="30" rows="3" placeholder="1. Pasos para preparación"></textarea>';
 
             content_recipe.appendChild(content_div);
