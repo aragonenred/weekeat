@@ -128,6 +128,9 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
 
+    var calendar = new Calendar();
+    var calen = calendar.getWeek();
+    console.log(calen);
 
 
 });

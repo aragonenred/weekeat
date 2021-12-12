@@ -258,6 +258,11 @@ header i{
 }
 
 /**New Recipe***/
+.calendar_head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .recipe_detail_steps .campo{
     display: inline-grid!important;
 }
