@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function(){
     const btn_add_item_recipe = document.querySelector("#recipe-btn-add-item");
     const btn_add_step = document.querySelector("#btn-add-step");
 
- 
     if(btn_addItem){
         btn_addItem.addEventListener("click", function(e){
             addFloat.style.display = "block";
@@ -128,9 +127,82 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
 
-    var calendar = new Calendar();
-    var calen = calendar.getWeek();
-    console.log(calen);
+    //CALENDARIO
+    const btn_prevWeek = document.querySelector("#calendar_week_prev");
+    const btn_nextWeek = document.querySelector("#calendar_week_next");
+
+    btn_nextWeek.addEventListener("click", function(e){
+        e.preventDefault()
+        var calendar = new Calendar();
+        var listaCal = calendar.loadCalendar();
+
+        var date = new Date();
+        //var fechaHoy = String(date.getFullYear()) + '-' + String(date.getMonth()+1) + '-' +  String(date.getDate());
+        
+        var primerDiaSemana = getFirstDayWeek(date);
+        var ultimoDiaSemana = getLastDatWeek(date);
+        
+        var week = Array();
+
+        for(i=0; i<listaCal.length; i++){
+            let fechaCal = new Date(listaCal[i].year + '-' + listaCal[i].month + '-' + listaCal[i].day + ' 00:00');   
+            if(fechaCal >= primerDiaSemana && fechaCal < ultimoDiaSemana){
+                week.push(listaCal[i]);
+            }     
+        }
+
+        for(i=primerDiaSemana; i<ultimoDiaSemana; i.setDate((date.getDate() - date.getDay()) + 7))
+            
+           drawWeek(week);
+        });
+        
+    //});
+
+
+    function getFirstDayWeek(fecha /**aaaa-mm-dd**/){       
+        var date = new Date(fecha.getFullYear() + '-' + (fecha.getMonth()+1) + '-' + fecha.getDate() +' 00:00'); 
+        date.setDate(date.getDate() - date.getDay());
+        
+        return(date);
+    }
+    function getLastDatWeek(fecha){    
+        var date = new Date(fecha.getFullYear() + '-' + (fecha.getMonth()+1) + '-' + fecha.getDate() +' 00:00'); 
+        date.setDate((date.getDate() - date.getDay()) + 7);
+            
+        return(date);
+    }
+
+    function drawWeek(week){
+       let calendar_week = document.querySelector('#calendar_week');
+       for(i=0; i<week.length; i++){
+           console.log(week[i]);
+            let calendar_day = document.createElement('div');
+            calendar_day.classList.add('calendar_day');
+            calendar_day.innerHTML = `<div class="calendar_day_head">
+                                        <h4 > ${week[i].day} de ${week[i].month} </h4> 
+                                      </div>
+                                      <div class="calendar_day_body">      
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td><i class="fas fa-sun"></i></td>
+                                                    <td>${week[i].type === '1' ?week[i].title:''}</td>
+                                                    <td><i class="fas fa-pencil-alt"></td>                       
+                                                </tr>
+                                                <tr>
+                                                    <td><i class="fas fa-moon" ></i></td>
+                                                    <td>${week[i].type === '2' ?week[i].title:''}</td>
+                                                    <td><i class="fas fa-pencil-alt"></td>                       
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                      </div> `;
+            calendar_week.appendChild(calendar_day);
+        }
+
+        
+
+    }
 
 
 });

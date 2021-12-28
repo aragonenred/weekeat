@@ -3,16 +3,16 @@
 
 <main class="container">
     <div class="calendar_head">
-        <p><i class="fas fa-caret-square-left"></i></p>
+        <button id="calendar_week_prev"><i class="fas fa-caret-square-left"></i></button>
         <h2>Semana 1</h2>
-        <p><i class="fas fa-caret-square-right"></i></p>
+        <button id="calendar_week_next"><i class="fas fa-caret-square-right"></i></button>
     </div>
-    <div class="calendar_week">
+    <div class="calendar_week" id="calendar_week">
 
-    <?php foreach($week as $key => $day){?>
-        <div class="calendar_day">
+    <?php //foreach($week as $key => $day){?>
+        <!--<div class="calendar_day">
             <div class="calendar_day_head">
-                <h4 ><?php echo $key . " " .$day;    ?></h4> 
+                <h4 ><?php //echo $key . " " .$day;    ?></h4> 
             </div>
             <div class="calendar_day_body">      
                 <table>
@@ -30,8 +30,8 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-    <?php }?>
+        </div> -->
+    <?php // }?>
         
     </div>
  

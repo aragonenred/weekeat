@@ -258,11 +258,7 @@ header i{
 }
 
 /**New Recipe***/
-.calendar_head{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+
 .recipe_detail_steps .campo{
     display: inline-grid!important;
 }
@@ -288,6 +284,11 @@ header i{
     text-align: center;
 }
 /**CALENDAR**/
+.calendar_head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .calendar_day_head{
     border-bottom:  1px solid #9b959557;
     text-align: center;

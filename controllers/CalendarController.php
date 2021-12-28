@@ -10,6 +10,15 @@ class CalendarController{
        
     }
 
+    public function getCalendar(){
+        require_once("models/CalendarModel.php");
+        $calendar = new Calendar_Model();
+
+        $resultado = $calendar->getRecipes();
+
+        echo  (json_encode($resultado));
+
+    }
 
     private function daysToDate($date, $days, $operator){
         $newdate = date("d-m-Y", strtotime($date.$operator." ".$days." days"));
@@ -17,7 +26,7 @@ class CalendarController{
         return $newdate;
     }
 
-
+    
 
     private function getWeek($date){
         $firstDayWeek = $this->daysToDate(date("d-m-Y",strtotime($date)),date("w",strtotime($date)) -1, "-" );

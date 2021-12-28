@@ -1,28 +1,35 @@
 function Calendar(){
-   this.date = new Date();
-   this.day = this.date.getDate();  
-   this.fisrtDayWeek =  this.day - this.date.getDay() +1 //primer dia lunes
+   this.date;
+   this.day;  
+   this.week;
 
 
-   this.getWeek = function(){
-        var week = {
-            'Lunes:': this.fisrtDayWeek,
-            'Martes:' : this.fisrtDayWeek +1,
-            'Miercoles:' : this.fisrtDayWeek +2,
-            'Jueves:' : this.fisrtDayWeek +3,
-            'Viernes:' : this.fisrtDayWeek +4,
-            'Sabado:' : this.fisrtDayWeek +5,
-            'Domingo:' : this.fisrtDayWeek +6
-        }
-        return week;
+   this.nextWeek = function(){
+        this.week = "Entre al calendario";
+        return this.week;
    }
 
-   this.addDaysToDate = function (date, days){
-        var newdate = new Date(date);
-        newdate.setDate(newdate.getDate() + days);
-        return newdate;
+   this.prevWeek = function(){
+        
+     return week;
    }
 
+   this.loadCalendar=function(){
+     var cal;
+     const xhr = new XMLHttpRequest;
+     xhr.open('GET', 'http://localhost/weekeat/index.php?c=Calendar&a=getCalendar',false);
+     xhr.onload = function(e){
+         if(xhr.status === 200){
+             cal = JSON.parse(xhr.responseText);        
+
+             
+         }
+     }
+     xhr.send(null); 
+     return cal;
+
+
+   }
 
 
 }
