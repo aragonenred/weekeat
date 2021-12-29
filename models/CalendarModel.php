@@ -9,10 +9,11 @@ class Calendar_Model{
 
 
     public function getRecipes(){
-        $sql="SELECT c.day, c.month, c.year, c.type, c.id_recipe, r.title
+        $sql="SELECT c.day, c.month, c.year, c.lunch_id,rl.title as lunch, c.dinner_id,  rd.title as dinner
               FROM calendar c
-              LEFT JOIN recipes r on c.id_recipe = r.id
-              ORDER BY year, month, day;";
+              LEFT JOIN recipes rl on c.lunch_id = rl.id
+              LEFT JOIN recipes rd on c.dinner_id = rd.id
+              ORDER BY year, month, day";
         try {
             $resultado = $this->db->query($sql);
             while($row = $resultado->fetch_assoc()){

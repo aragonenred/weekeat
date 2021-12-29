@@ -22,6 +22,7 @@
             <a href="index.php?c=Items&a=index">Ingredientes</a>
             <a href="index.php?c=Cupboard&a=index">Alacena</a>
             <a href="index.php?c=Recipes&a=index">Recetas</a>
+            <a href="index.php?c=Calendar&a=index">Calendario</a>
         </div>       
     </div>
 

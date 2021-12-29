@@ -335,6 +335,12 @@ header i{
     padding: 1rem;
     margin-right: .5rem;
 }
-.calendar_day_body table tbody tr td{
+.calendar_day_body table tbody tr td:first-child{
     height: 5.5rem;
+    width: 4rem;
 }
+.calendar_day_body table tbody tr td:nth-child(3){
+    height: 5.5rem;
+    width: 4rem;
+}
+

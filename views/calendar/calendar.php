@@ -32,11 +32,13 @@
             </div>
         </div> -->
     <?php // }?>
-        
+        <input type="hidden" name="" id="id_recipe" value>
     </div>
  
        
 </main> 
 <?php include_once "views/templates/footer.php"; ?>
+<script src="js/class/calendarClass.js"></script>
+<script src="js/calendar.js"></script>
 </body>
 </html>
