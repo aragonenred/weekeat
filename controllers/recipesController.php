@@ -1,38 +1,50 @@
 <?php
+header('Access-Control-Allow-Origin:*');
 class RecipesController{
-    public function index(){
+    
+   
+    public function recipeList(){
         require_once "models/RecipesModel.php";
+        
+    
         $recipe = new Recipes_Model();
-        $data = $recipe->get_recipes();
-     
+        $recipesList = $recipe->get_recipes();
+        /*
         for($i=0; $i<count($data['body']); $i++){
+            
+
+            
+            
             $recipes[] = array(
-                                'id'=> $data['body'][$i]['id'],
+                                'idrecipe'=> $data['body'][$i]['idrecipe'],
                                 'title' => $data['body'][$i]['title'],
                                 'description'=> $data['body'][$i]['description'],
                                 'image' => $data['body'][$i]['image'],
-                                'items' => $data['items'][$i]
+                                'items' => $data['body'][$i]['items']
+                              
             );
-        }
+        }*/
 
-        
-        require_once "views/recipes/recipes-list.php";
+
+
+        $json = json_encode($recipesList);
+        echo $json;   
     }
 
-    public function recipe_detail(){
+    public function recipeDetail(){
         require_once('models/RecipesModel.php');
         $recipe = new Recipes_Model();
-        $data = $recipe->get_recipe($_GET['id']);
+        $data = $recipe->get_recipe($_GET['idRecipe']);
         
         $recipe_detail = array(
-                        'id'=> $data['body']['id'],
+                        'id'=> $data['body']['idrecipe'],
                         'title' => $data['body']['title'],
-                        'steps'=> json_decode($data['body']['description']),
+                        'description'=> $data['body']['description'],
                         'image' => $data['body']['image'],
-                        'items' => $data['items']
+                        'items' => $data['body']['items']
             );
-
-        include_once('views/recipes/recipe-detail.php');
+        $json = json_encode($recipe_detail);
+        echo $json;
     }
 
 

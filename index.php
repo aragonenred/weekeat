@@ -8,6 +8,8 @@
         echo "lo encontre ";
     }*/
 
+    echo 'Load index';
+
     if(isset($_GET['c'])){
         $controller = loadController($_GET['c']); //Lo va a buscar a routes.php
 

@@ -9,45 +9,68 @@ class Recipes_model{
     }
 
     public function get_recipes(){
-        $sql="SELECT id, title, description, image FROM recipes";
+        $sql="SELECT a.idrecipe, a.title, a.description, a.image,
+                     CASE WHEN MIN(CASE WHEN b.quantity > c.stock THEN '0' ELSE '1' END) = '0' THEN 'FALSE' ELSE 'TRUE' END AS available,
+                     SUM(CASE WHEN b.quantity > c.stock THEN 1 else 0 end) as faltante
+              FROM recipes a
+              LEFT JOIN recipevsitem b ON a.idrecipe = b.idrecipe
+              LEFT JOIN items c ON c.iditem = b.iditem
+              GROUP BY a.idrecipe, a.title, a.description, a.image";
+
+              
         $resultado = $this->db->query($sql);
 
         while($row = $resultado->fetch_assoc()){
-            //Traigo todos los items de esa receta
-            $items = $this->get_item_recipe($row['id']);      
-            
-            $this->recipes['body'][] = $row;      
-            $this->recipes['items'][] = $items; 
+
+            $data = Array(
+                            'idrecipe'=> $row['idrecipe'],
+                            'title' => $row['title'],
+                            'description'=> $row['description'],
+                            'image' => $row['image'],
+                            'available' => $row['available'],
+                            'faltante' => $row['faltante']
+            );
+                        
+            $this->recipes[] = $data;      
+          
         }
         return $this->recipes;
     }
 
  
-    public function get_recipe($id){
-        $sql="SELECT id, title, description, image FROM recipes  WHERE id=".$id;
+    public function get_recipe($idRecipe){
+        $sql="SELECT idrecipe, title, description, image FROM recipes  WHERE idrecipe=".$idRecipe;
         $resultado = $this->db->query($sql);
 
-        $this->recipes['body'] = $resultado->fetch_assoc(); 
-
+        $data = $resultado->fetch_assoc(); 
         //Traigo todos los items de esa receta
-        foreach($this->recipes as $recipe){
-            $items = $this->get_item_recipe($recipe['id']);  
-            $this->recipes['items'] = $items; 
-        }
+        foreach($data as $recipe){
+            $items = $this->get_item_recipe($data['idrecipe']);  
+         }
+
+        $this->recipes['body'] = Array (
+                                        'idrecipe'=> $data['idrecipe'],
+                                        'title' => $data['title'],
+                                        'description'=> $data['description'],
+                                        'image' => $data['image'],
+                                        'items' => $items
+        );
 
         return $this->recipes;
     }
 
 
     private function get_item_recipe($id_recipe){
-        $sql = "SELECT itemsrecipe.id_recipe, itemsrecipe.id_item, itemsrecipe.quantity, items.description, items.um, items.image FROM itemsrecipe LEFT JOIN items ON itemsrecipe.id_item = items.id WHERE itemsrecipe.id_recipe = ".$id_recipe;
+        $sql = "SELECT recipevsitem.idrecipe, recipevsitem.iditem, recipevsitem.quantity, items.description, items.stock, items.um, items.image 
+                FROM recipevsitem 
+                LEFT JOIN items ON recipevsitem.iditem = items.iditem WHERE recipevsitem.idrecipe = ".$id_recipe;
         $resultado = $this->db->query($sql);
         $items=null;
         
         while($item = $resultado->fetch_assoc()){              
             $items[] = array(
-                        'id_recipe'=> $item['id_recipe'],
-                        'id_item' => $item['id_item'],
+                        'idrecipe'=> $item['idrecipe'],
+                        'iditem' => $item['iditem'],
                         'quantity' => $item['quantity'],
                         'description' => $item['description'],
                         'um' =>$item['um'],
